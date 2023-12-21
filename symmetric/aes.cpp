@@ -74,7 +74,7 @@ int main(int argc, char **argv)
     string key = string((char *)key_bytes, sizeof(key_bytes));
  
     //text to encrypt
-    string plaintext= "elephants in space";
+    string plaintext= "Ayaanle maxamed";
     cout << plaintext << endl;
  
     //encrypt
