@@ -7,35 +7,35 @@
 
     using namespace std;
 
-    string encryptionMessage(string Msg)
+    string encryptionMessage(string msg)
 
     {
 
-        string CTxt = "";
+        string cipher_text = "";
 
         int a = 3;
 
         int b = 6;
 
-        for (int i = 0; i < Msg.length(); i++)
+        for (int i = 0; i < msg.length(); i++)
 
         {
 
-            CTxt = CTxt + (char) ((((a * Msg[i]) + b) % 26) + 65);
+            cipher_text = cipher_text + (char) ((((a * msg[i]) + b) % 26) + 65);
 
         }
 
-        return CTxt;
+        return cipher_text;
 
     }
 
      
 
-    string decryptionMessage(string CTxt)
+    string decryptionMessage(string cipher_text)
 
     {
 
-        string Msg = "";
+        string msg = "";
 
         int a = 3;
 
@@ -61,15 +61,15 @@
 
         }
 
-        for (int i = 0; i < CTxt.length(); i++)
+        for (int i = 0; i < cipher_text.length(); i++)
 
         {
 
-            Msg = Msg + (char) (((a_inv * ((CTxt[i] - b)) % 26)) + 65);
+            msg = msg + (char) (((a_inv * ((cipher_text[i] - b)) % 26)) + 65);
 
         }
 
-        return Msg;
+        return msg;
 
     }
 
@@ -83,14 +83,14 @@
 
         cin >> message;
 
-        cout << "Message is :" << message;
+        cout << "Message is :" << message << endl;
 
-        cout << "\nEncrypted Message is : " << encryptionMessage(message);
+        cout << "Encrypted Message is : " << encryptionMessage(message) << endl;
 
      
 
-        cout << "\nDecrypted Message is: " << decryptionMessage(
+        cout << "Decrypted Message is: " << decryptionMessage(
 
-                encryptionMessage(message));
+                encryptionMessage(message)) << endl;
 
     }
